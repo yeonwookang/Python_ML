@@ -13,10 +13,26 @@
 6. Work place 지정 (임의 폴더 생성후 이동)
 7. jupyter notebook (jupyter notebook 실행)
 
+### 단축키
+- ctrl + enter : 셀 실행
+- shift + enter : 아래에 셀 추가
+- (셀 선택) dd : 셀 삭제
+- (셀 선택) a : 위에 셀 추가
 -----------------------------------------------------------------------
 
 ## 2019.01.28(월)
+### 개발 환경 설정
+* Data, Data Analysis, Data Mining
+* Big Data(3V)
+* Big Data 분석 방법
+>> 1. EDA (탐색적 데이터 분석)
+>> 2. Machine Learning
+>> 3. Deep Learning
 
+### 01_Python
+- Python Data Type
+
+-----------------------------------------------------------------------
 
 ### 강사님 연락처 & 블로그
 * moon9342@gmail.com
