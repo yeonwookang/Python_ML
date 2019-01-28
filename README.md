@@ -143,11 +143,11 @@
 > if 조건문:
 > <br>elif 조건문2:
 > <br>else:
-> <br>       pass(생략)
+> <br>&nbsp;&nbsp;&nbsp;&nbsp;pass(생략)
 
 - for문 구조
 > for n in range:
-> <br>      반복할 문장
+> <br>&nbsp;&nbsp;&nbsp;&nbsp;반복할 문장
 -----------------------------------------------------------------------
 
 ### 강사님 연락처 & 블로그
