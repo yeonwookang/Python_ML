@@ -11,7 +11,7 @@
 3. conda create -n tensorflow_env python=3.5 (python 3.5 버전으로 tensorflow 가상환경 설정)
 4. activate tensorflow_env (가상환경 실행)
 5. conda install nb_conda (nb_conda 다운로드)
-6. Work place 지정 (임의 폴더 생성후 이동)
+6. Working directory 지정 (임의 폴더 생성후 이동)
 7. jupyter notebook (jupyter notebook 실행)
 
 ## Jupyter Notebook 단축키
@@ -85,6 +85,7 @@
 > 4. ＊ (곱셈)
 > 5. 부분리스트의 대체, 삭제 연산 : Slicing 개념 이용
 > 6. del 리스트[n] : n번째 요소 삭제
+> 7. "".join(List) : 리스트의 항목들을 병합
 > <br>Tip! Python에서는 숫자 + 문자열 연산 불가능, 그러므로 숫자를 문자열로 변경 후 처리 => str() 함수 사용
 
 - List의 함수
@@ -148,6 +149,27 @@
 - for문 구조
 > for n in range:
 > <br>&nbsp;&nbsp;&nbsp;&nbsp;반복할 문장
+> <br>[for문과 List의 응용]
+> <br>score1 = [tmp * 2 for tmp in list]
+> <br>score2 = [tmp * 2 for tmp in list if tmp > 5]
+
+- 함수의 선언
+> def 함수이름(인자, 인자2):
+> <br>elif 조건문2:
+> <br>&nbsp;&nbsp;&nbsp;&nbsp;실행 문장
+> <br>&nbsp;&nbsp;&nbsp;&nbsp;return 결과
+
+- Exercise01. 두 수의 합과 차
+
+- Module이란?
+> 함수, 변수, class들을 모아놓은 파일
+> <br>모듈 생성 : module1.py
+> <br>모듈 호출 : import module1
+> <br>from 모듈 import 함수 as 가져올 이름 (from과 as는 생략 가능)
+> <br>다른 폴더의 모듈을 불러 올 때는 import sys , sys.path.append("절대경로")
+> <br>환경변수 PYTHONPATH를 생성한 후 모듈을 저장한 폴더를 설정하는 것도 가능
+> <br>모듈은 폴더형태로 계층구조로 관리하는 것이 좋다!
+
 -----------------------------------------------------------------------
 
 ### 강사님 연락처 & 블로그
