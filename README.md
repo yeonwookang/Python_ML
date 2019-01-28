@@ -73,8 +73,8 @@
 - List의 연산
 > 1. Indexing
 > 2. Slicing
-> 3.   +  (합치기)
-> 4.   *   (반복)
+> 3.   +   (덧셈) 
+> 4.   *   (곱셈)
 > 5. 부분리스트의 대체, 삭제 연산 : Slicing 개념 이용
 > 6. del 리스트[n] : n번째 요소 삭제
 > <br>Tip! Python에서는 숫자 + 문자열 연산 불가능, 그러므로 숫자를 문자열로 변경 후 처리 => str() 함수 사용
@@ -102,6 +102,23 @@
 > <br>Tip! 요소가 하나인 튜플을 선언할 때는 (요소값,) 처럼 뒤에 , 붙이기!
 > <br>Tip! 튜플 안에 리스트가 있는 경우 리스트 변경 가능
 
+- Python의 Dictionary (연관 배열로 구성 일반적으로 Hash, Map라고도 함)
+> 1. {    }
+> 2. Json 방식으로 데이터 표현 (순서 관계 X) : Dict = {"key1" : "value1", "key2" : "value2", ...}
+> 3. Dict["key"]
+> 4. 값의 삽입, 변경 가능
+> 5. del Dict["key"] : 키값으로 데이터 삭제
+> <br>Tip! key 값은 primary 하다. 
+
+- Dictionary의 함수
+> 1. Dict.keys() : 키만 추출 (그러나 List는 아님)
+> 2. Dict.values()
+> 3. Dict.items() : 각 항목의 키와 값을 튜플로 보여줌
+> 4. 반복문 사용 가능 : for key in Dict.keys() : print (Dict[key])
+> 5. Dict[key] : 방법 1
+> 6. Dict.get(key, default) : 방법 2 - 키값이 없으면 default 값 사용 가능 
+> 7. key in Dict : Dict 안에 key가 있는지 확인
+> 8. Dict.clear() : 모든 내용 삭제
 -----------------------------------------------------------------------
 
 ### 강사님 연락처 & 블로그
