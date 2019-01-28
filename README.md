@@ -38,13 +38,13 @@
 > 3. Boolean
 >	* True
 >	* False
->	* False로 간주되는 것:
+>	* False로 간주되는 것
 >		* ""(빈문자열)
 >		* [](빈 List)
 >		* ()(빈 Tuple)
 >		* {}(빈 Dict)
 >		* 0(숫자 0)
-> 4. List
+> 4. List, Tuple, Dictionary, Set ...
 
 - 문자열 Indexing
 > 1. 변수[n]
@@ -128,7 +128,26 @@
 > 7. key in Dict : Dict 안에 key가 있는지 확인
 > 8. Dict.clear() : 모든 내용 삭제
 
+- Python의 집합(Set) - 순서가 없고 중복이 없는 자료구조
+> 1. {      }
+> 2. set([n, m, l ...]) : 일반적인 set의 생성법
+> 3. Set1 & Set2 : Set1과 Set2의 교집합
+> 4. Set1 | Set2 : Set1과 Set2의 합집합
+> 5. Set1 - Set2 : Set과 Set2의 차집합
+> 6. Set1 ^ Set2 : 합집합에서 교집합을 뺀 결과
+> 7. Set.add(n)
+> 8. Set.update([n, m, l ...]) : 리스트 항목들을 Set에 추가
+> 9. Set.remove(n) : Set에서 삭제
 
+- if문 구조
+> if 조건문:
+> <br>elif 조건문2:
+> <br>else:
+> <br>       pass(생략)
+
+- for문 구조
+> for n in range:
+> <br>      반복할 문장
 -----------------------------------------------------------------------
 
 ### 강사님 연락처 & 블로그
