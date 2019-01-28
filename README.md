@@ -1,4 +1,7 @@
 ﻿# Hanwha System/ICT 기술교육 (2019.01.28~2019.02.01)
+- 매일 아침 전날 배운 내용 2문제 정도 시험
+- 마지막 시험: 객관식 10개 주관식 5개
+
 ## 환경설정
 * jupyter notebook 설정 파일 다운로드: http://tagme.to/moon9342/config/
 * 다운로드 받은파일은 사용자폴더로 이동 $home/.jupyter (jupyter notebook 1회 실행 후 폴더 자동 생성)
@@ -11,11 +14,12 @@
 6. Work place 지정 (임의 폴더 생성후 이동)
 7. jupyter notebook (jupyter notebook 실행)
 
-### 단축키
+## Jupyter Notebook 단축키
 - ctrl + enter : 셀 실행
 - shift + enter : 아래에 셀 추가
 - (셀 선택) dd : 셀 삭제
 - (셀 선택) a : 위에 셀 추가
+
 -----------------------------------------------------------------------
 
 ## 2019.01.28(월)
@@ -29,18 +33,69 @@
 
 ### 01_Python
 - Python Data Type
+> 1. 숫자 (정수, 실수, 지수, 복소수)
+> 2. 문자열
+> 3. Boolean
+> 4. List
+
 - 문자열 Indexing
 > 1. 변수[n]
 > 2. 변수[-n] (뒤에서부터)
-- <u>문자열 Slicing</u>
+
+- 문자열 Slicing
 > 1. 변수[n:n]
 > 2. 변수[n:] (끝까지)
 > 3. 변수[:n] (처음부터)
+
 - 문자열 Formatting
+> 1. %d (정수)
+> 2. %s (문자열)
+> 예시) a = "나는 사과를 %d개 가지고 있어요!" %count
+> 예시) a = "사과를 {0}개, 바나나를 {1}개".format(3, 4)
+
+- 문자열 함수
+> 1. len(String)
+> 2. String.count(String2) : 문자열 변수 내에서 문자열2의 개수
+> 3. String.find(String2) : 문자열2가 처음 나온 위치, 없으면 -1
+> 4. String.index(String2) : 문자열2가 처음 나온 위치, 없으면 Error
+> 5. String.upper()
+> 6. String.lower()
+> 7. String.strip() : 양옆 공백 제거
+> 8. String.replace(원본문자열, 바꿀문자열)
+> 9. String.split(구분자)
+
+- Python의 List
+> 1. list()
+> 2. [ ]
+> Tip! 데이터 타입 확인시 type(변수)
+> Tip! 데이터 타입에 관계없이 하나의 리스트에 삽입 가능 (리스트 안의 리스트도 OK)
+
+- List의 연산
+> 1. Indexing
+> 2. Slicing
+> 3. + (합치기)
+> 4. * (반복)
+> 5. 부분리스트의 대체, 삭제 연산 : Slicing 개념 이용
+> 6. del 리스트[n] : n번째 요소 삭제
+> Tip! Python에서는 숫자 + 문자열 연산 불가능, 그러므로 숫자를 문자열로 변경 후 처리 => str() 함수 사용
+
+- List의 함수
+> 1. List.append(요소) : 마지막에 요소 추가
+> 2. List.sort() : return 값 없음 (리스트 자체를 변경시킴)
+> 3. List.reverse() : 리스트 요소 순서 뒤집기
+> 4. List.insert(n, m) : n번째 앞에 m 추가
+> 5. List.remove(m), 처음 발견한 m 삭제
+> 6. List.pop()
+> 7. List.extend(부분리스트)
+> Tip! List.sort().reverse() 불가능, 왜냐하면 sort()함수의 return이 none이기 때문!
+
+- List의 복사
+> 1. 복사할 때는 copy 모듈 사용 (import copy from copy as cp)
+> Tip! 객체의 비교시 "a is b" 형태로 사용 가능, ( == 은 내용을 비교, is는 참조 객체를 비교)
+> Tip! 리스트를 Slicing해서 다른 변수에 대입하는 경우 다른 리스트로 인식!
 
 -----------------------------------------------------------------------
 
 ### 강사님 연락처 & 블로그
 * moon9342@gmail.com
 * moon9342.github.io
-
