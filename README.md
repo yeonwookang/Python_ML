@@ -3,8 +3,8 @@
 - 매일 아침 전날 배운 내용 2문제 정도 시험
 - 마지막 시험: 객관식 10개 주관식 5개
 
-*<a href="#python">01_Python</a>
-*<a href="#numpy">02_Numpy</a>
+<a href="#python">* 01_Python</a>
+<a href="#numpy">* 02_Numpy</a>
 
 ## 환경설정
 * jupyter notebook 설정 파일 다운로드: http://tagme.to/moon9342/config/
