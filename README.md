@@ -242,7 +242,7 @@
 > 3. 평균 구하기 : data[:, 2].mean()
 > 4. 회원 수 구하기: np.unique(data[:, 0]
 
-### <a id="pandas">03_Pandasy</a>
+### <a id="pandas">03_Pandas</a>
 > * Python data 분석의 핵심 Library
 - Series
 > 1. pd.Series(List or Dictionary ..) : 시리즈 생성
@@ -254,6 +254,31 @@
 
 - DataFrame
 > 1. List와 Dictionary를 사용한 생성 가능
+> 2. pd.DataFrame(Data) : 표 형태로 데이터 출력
+> 3. Df.index.name = "문자열"; Df.columns.name = "문자열" : 이름과 열이름 추가 가능
+> 4. Df[컬럼이름] : 해당 컬럼만 시리즈로 출력 (리스트 사용 가능)
+> 5. Df[새컬럼이름] = [리스트] :  새로운 컬럼과 데이터 추가 가능
+> 6. ＋, ＊, 비교연산자 등 사용 가능
+> 7. del Df[컬럼이름] : 열 삭제 (그다지 바람직한 방법 X)
+> 8. (열삭제) Df.drop(컬럼이름, axis=숫자) : 숫자는 0~ndim-1까지 사용 가능, 방향을 지정
+> 9. 행을 가지고 올 때는 Slicing 사용 - Df[0:1] 첫 번째 행 가지고 오기
+> 10. Df.loc["인덱스이름":"인덱스이름", "컬럼이름", "컬럼이름"] : 해당 인덱스의 데이터를 출력
+> 11. (행삭제) Df.drop(행인덱스)
+> 12. Df.iloc[숫자] : 해당 순서의 데이터를 출력
+> 13. Mask하는 방법 : df.loc[df["points"] > 2.0, ["names", "points"]] 조건에 맞는 것만 걸러낼 수 있음
+> 14. Index에 날짜 추가: df.index = pd.date_range("20190101", periods=6)
+> 15. 열 추가: df["E"] = [3.5, np.nan, 2.0, np.nan, 1.7, np.nan]
+> 16. Nan이 있는 행 없애기 : df.dropna(how="any")
+> 17. Nan 값 대체 : df.fillna(0)
+> 18. 각 Cell의 Nan값 체크 : df.isnull()
+> 19. 합 구하기 : df.sum(axis=1)
+> 20. 특정 열의 합: df["two"].sum() 
+> 21. 특정 행의 합: df.loc["b"].sum()
+><br> Tip! df.values를 하는 경우 values로 출력 가능
+><br> Tip! 데이터프레임 생성시에도 열이름과 인덱스를 지정할 수 있다.
+><br> Tip! 여러 조건을 마스크로 줄 수 있음 : df.loc[(df["year"] >= 2015) & (df["points"] > 2.0)]
+
+
 
 -----------------------------------------------------------------------
 
