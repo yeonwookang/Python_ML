@@ -3,8 +3,9 @@
 - 매일 아침 전날 배운 내용 2문제 정도 시험
 - 마지막 시험: 객관식 10개 주관식 5개
 
-<a href="#python">* 01_Python</a>
-<a href="#numpy">* 02_Numpy</a>
+<a href="#python">01_Python</a><br>
+<a href="#numpy">02_Numpy</a><br>
+<a href="#pandas">03_Pandas</a><br>
 
 ## 환경설정
 * jupyter notebook 설정 파일 다운로드: http://tagme.to/moon9342/config/
@@ -214,8 +215,46 @@
 > 1. Arr = np.array(List) : 파이썬 리스트로 넘파이 배열 생성
 > 2. Arr.ndim : 몇 차원의 배열인지 확인 가능
 > 3. Arr.shape : 차원의 개수와 원소의 개수
+> 4. Arr.shape = n, m : n행 m열로 배열 형태 변환
+> 5. Arr.dtype = Datatype : 명시적 자료형 선언 - arr = np.array([1, 2, 3, 4, 5], dtype=np.float64)
+> 6. Arr = Arr.astype(np.datatype) : 자료형 변경 가능 (실수 -> 정수 변환시 소수점 이하 버림)
+> 7. Arr = np.zeros((n, m)) : 0으로 채워진 n행 m열 매트릭스 생성
+> 8. Arr = np.arange(n, m, l) : 생성함수 시작, 끝, 간격
+> 9. Arr = np.linspace(n, m, l) : 주어진 범위를 지정한 샘플의 개수로 나누어 정해지는 간격으로 연속적인 배열 생성
+> 10. Arr2 = Arr1.reshape(n, m) : Arr1을 n행 m열로 변환하여 Arr2에 저장 (원본 보존 View의 개념)
+> 11. Arr1.base is Arr2 : 두 배열의 원본이 같은지 확인 가능
+> 12. Arr2 = Arr1.resahpe(n, m).copy() : 복사하기
+> 13. Arr.ravel() : 모든 내용을 1차원 배열로 만듦
+> 14. Arr1 = np.vstack((Arr2, Arr3)) : 열 붙이기
+> 15. Arr1 = np.hstack((Arr2, Arr3)) : 행 붙이기
+> 16. for idx, date in enumerate(Arr) : 인덱스와 데이터 반복해서 가져오기
+> <br> Tip! 가상환경에 numpy 라이브러리 설치하기 - (tensorflow_env) pip install numpy
+> <br> Tip! reshape() 함수 안에 -1을 넣으면 자동 설정 (ex> -1, 2인 경우 열은 2로 고정, 행은 나머지 자동)
+> <br> Tip! Numpy의 Slicing은 View이다! (원본 변경시 함께 변경됨)
 
-> <br>Tip! 가상환경에 numpy 라이브러리 설치하기 - (tensorflow_env) pip install numpy
+- numpy  배열의 연산
+> 1. ＋ : 두 매트릭스의 같은 위치 요소들을 합침
+> 2. ＊ : 각 요소에 숫자를 곱함
+
+- Movie Rating 분석 실습
+> 1. csv 파일의 맨 윗줄은 # 주석처리
+> 2. 파일 오픈 : data = np.loadtxt("data/movie/ratings.csv", delimiter=",", dtype=np.float64)
+> 3. 평균 구하기 : data[:, 2].mean()
+> 4. 회원 수 구하기: np.unique(data[:, 0]
+
+### <a id="pandas">03_Pandasy</a>
+> * Python data 분석의 핵심 Library
+- Series
+> 1. pd.Series(List or Dictionary ..) : 시리즈 생성
+> 2. Series.name = 문자열 : 시리즈에 이름 부여
+> 3. Series.index.name = 문자열 : 시리즈의 인덱스에 이름 부여
+> <br> Pandas에서 정의한 고유의 자료구조: Series(1차원 nparray), DataFrame(2차원 nparray)
+> <br> Tip! 가상환경에 pandas 라이브러리 설치하기 - (tensorflow_env) pip install pandas
+> <br> Tip! 생성시 바로 인덱스 부여 : pd.Series([-1, 3, 6, 8, 9], index=["a", "b", "c", "d", "e"])
+
+- DataFrame
+> 1. List와 Dictionary를 사용한 생성 가능
+
 -----------------------------------------------------------------------
 
 ### 강사님 연락처 & 블로그
