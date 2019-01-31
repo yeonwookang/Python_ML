@@ -2,10 +2,16 @@
 # Hanwha System/ICT 기술교육 (2019.01.28~2019.02.01)
 - 매일 아침 전날 배운 내용 2문제 정도 시험
 - 마지막 시험: 객관식 10개 주관식 5개
+- 금요일 정규수업 11시 종료, 11시~12시 총 20문제 최종 시험(개인)
+- 팀별 발표 (기획력, 발표력, insight, 향후 발전 가능성) PPT 장표, 발표자의 팀만 들어와서 발표 
+- 분석이라는 카테고리로 어떤 기술을 적용할지... 기획력
+- 강의실 9시까지 개방 예정
 
 <a href="#python">01_Python</a><br>
 <a href="#numpy">02_Numpy</a><br>
 <a href="#pandas">03_Pandas</a><br>
+<a href="#tensorflow">04_Tensorflow</a><br>
+
 
 ## 환경설정
 * jupyter notebook 설정 파일 다운로드: http://tagme.to/moon9342/config/
@@ -279,8 +285,94 @@
 ><br> Tip! 여러 조건을 마스크로 줄 수 있음 : df.loc[(df["year"] >= 2015) & (df["points"] > 2.0)]
 
 
+-----------------------------------------------------------------------
+
+
+## 2019.01.30(수)
+### 이론
+* 상관관계
+- 수치로 계산되어 두 대상이 서로 연관성이 있다고 추측되는 관계
+> * 예시) 성적(정량적)과 자존감(정성적) -> 정성적인 부분을 정량적으로 표현하면 둘의 상관관계를 알 수 있음
+> * 예시2) 온라인 게임과 폭력성
+> * 상관계수 : -1 ~ 1  사이의 값으로 표현
+> * 0에 가까울 수록 관계 없음, 1에 가까울 수록 관계 있음
+> * -1은 반비례 관계, 1은 정비례 관계
+> * 상관관계는 두 대상의 연관성만 추측할 수 있고 인과관계를 설명할 수 없음
+
+### 03_Panpas
+- 상관계수
+> 1. df["A"].corr(df["C"]) : 두 데이터 간의 연관성을 상관계수로 표현
+> 2. 평균(mean) : 수학적 확률에 대한 기댓값
+> 3. 편차(deviation) : 평균과 각 값들의 차이
+> 4. 분산(variance) : 각 편차의 제곱의 평균 , 단점: 단위상 원래 데이터와 떨어져 있음 (제곱)
+> 5. 표준편차(standard deviation) : 분산에 제곱근을 취함
+> 6. 공분산: 분산은 한 변수에 대해서, 두 변수를 이용해 분산처리 하는 것. 두 변수에 대한 상승 혹은 하강에 대한 경향 분석에 사용
+> 7. df.corr() : 한꺼번에 각 컬럼간의 상관계수를 구함
+
+
+- DataFrame 정렬
+> 1. random_date = np.random.permutation(df.index) : 인덱스 순서를 랜덤하게 배치
+> 2. 재인덱싱 : df2 = df.reindex(index=random_date, columns=["B", "A", "D", "C"])
+> 3. df2.sort_index(axis=0, ascending=False) : 인덱스로 정렬하기. ascemding 오름차순 => False: 내림차순
+> 4. df2.sort_values(by=["A", "B"]) : 값으로 정렬하기.  A로 정렬한 후, A컬럼에 대해 같은 값이 있는 경우 B로 정렬
+> 5. df2["E"].unique() : unique한 값을 도출
+> 6. df2["E"].value_counts() :  각 값의 개수
+> 7. df2.loc[df2["E"].isin(["CC"]),:] : E열이 CC인 값을 모두 출력
+> 8. df = pd.read_csv("data/loan/LoanStats3d.csv", sep="," ) : 외부 파일 열어오기
+> 9. df.head(), df.tail() : 데이터의 머리 또는 꼬리 부분만 추출
+
+- Loan Data
+><br>대출기간의 종류를 땡겨옴
+><br>df2["term"].unique()
+><br>print("[대출기간의 종류]")
+><br>print(df2["term"].unique())
+><br>loan_amount = {}
+><br>loan_term = df2["term"].unique()
+><br>for term in loan_term :
+><br>	 term_sum = df2.loc[df2["term"]==term, "loan_amnt"].sum()
+><br>	 loan_amount[term] = term_sum
+><br>loan_amount
+><br>df2.head()
+><br>df2.to_csv("result.csv", sep=",") #파일저장
+
+### Machine Learning
+* Machine Learning은 Software
+* Explicit programming의 한계 때문에 주목 받음
+1. Supervised Learning
+	* 사용하는 Data set에 Label이 있음
+	1. Linear Regression (선형회귀) : Label의 값의 범위가 상대적으로 넓음
+	> 많은 데이터와 현상들이 선형적인 관계를 가진다.
+	> <br> 공부하는 시간과 성적의 관계
+	> 1. Linear Hypothesis를 정의하는 것은 trainning data set에 잘 맞는 linear한 선을 긋는 것
+	> 2. Hypothesis를 수정해 나가면서 데이터에 가장 적합한 선을 찾는 과정이 바로 학습
+	> 3. 가설의 수학적 표현 : H(x) = Wx + b
+
+	2. Logistic Regression : Label의 값이 둘 중 하나 (0, 1)
+	3. Multinomial Classification : Label의 값이 n개 중에 하나
+2. Unsupervised Learning
+	* 사용하는 Data set에 Label이 없음
+
+
+### <a id="tensorflow">04_Tensorflow</a>
+- Tensorflow란?
+> Tensorflow는 data flow graph를 이용해서 수학적 연산을 하는 구글에서 만든 machine learning을 위한 open source library
+> <br>graph를 만듦 (node라는 개념과 edge라는 개념이 있음)
+> <br>node가 하는 일은 수학적 연산 (사칙연산)과 현재 node가 갖고 있는 tensor를 출력
+> <br>tensor는 동적인 크기인 다차원 배열을 저장
+> <br>edge는 tensor를 node로 실어 나르는 역할
+> <br>tensorflow에서 사용하는 graph는 방향성이 있는 graph
+
+
+- Tensorflow 설치
+> pip install tensorflow 
+
+- Node의 생성과 출력
+> 1. node1 = tf.constant("Hello World") : 문자열 상수를 가진 노드 생성
+> 2. sess = tf.Session() : 그래프를 실행시키는 문장
+> 3. sess.run(node1) : node1을 실행
 
 -----------------------------------------------------------------------
+
 
 ### 강사님 연락처 & 블로그
 * moon9342@gmail.com
